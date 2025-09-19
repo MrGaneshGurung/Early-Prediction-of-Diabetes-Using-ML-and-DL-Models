@@ -1,3 +1,65 @@
-Diabetes is a major global health issue affecting more than 422 million people. If not diagnosed early, it can lead to serious complications such as heart disease, kidney failure, nerve damage and vision loss. Early detection is therefore vital. This dissertation explores how machine learning (ML) and deep learning (DL) models can be used to predict diabetes from patient data. The study uses the PIMA Indians Diabetes dataset, which contains common problems such as missing values, implausible zero entries, and an imbalance between diabetic and non-diabetic cases. To address these, the data was cleaned using median imputation, scaled for consistency, and balanced with the Synthetic Minority Oversampling Technique (SMOTE).
+# Diabetes Prediction Using Machine Learning and Deep Learning
 
-Five models were trained and compared: Logistic Regression, Support Vector Machine (SVM), Random Forest, XGBoost, and a Neural Network. Their performance was measured using accuracy, precision, recall, F1-score, and AUC-ROC. Interpretability was added through LIME, which explained the most important features in predictions. XGBoost achieved the best results, with an accuracy of 76.6% and an F1-score of 0.70. LIME confirmed that glucose, BMI and insulin were the strongest predictors. The project shows that machine learning can support early diabetes detection, though larger datasets are needed for real-world use.
+This project implements a predictive system for *diabetes classification* using machine learning (ML) and deep learning (DL) models. It demonstrates an *end-to-end pipeline* covering data preprocessing, feature scaling, class imbalance handling, model training, evaluation, and interpretability.
+
+---
+
+##  Dataset
+- *PIMA Indians Diabetes Dataset* (768 records, 8 clinical features)  
+- Target variable: 0 (non-diabetic) or 1 (diabetic)
+
+---
+
+##  Preprocessing
+- Handling missing/implausible values (zeros in features like glucose, BMI, insulin)  
+- Median imputation  
+- Feature standardisation (zero mean, unit variance)  
+- Class balancing using *SMOTE*
+
+---
+
+## Models Implemented
+1. Logistic Regression  
+2. Support Vector Machine (SVM)  
+3. Random Forest  
+4. XGBoost  
+5. Neural Network (MLP)
+
+*Hyperparameter tuning* was performed using GridSearchCV for optimal performance.
+
+---
+
+## Evaluation Metrics
+- Accuracy  
+- Precision  
+- Recall  
+- F1-score  
+- AUC-ROC  
+
+*XGBoost* achieved the best performance in terms of accuracy, F1-score, and AUC.
+
+---
+
+## Explainability
+- *LIME* was used to interpret model predictions  
+- Key features identified: *Glucose, BMI, Insulin*  
+- Ensures predictions are clinically meaningful and transparent
+
+---
+
+## Key Highlights
+- SMOTE improved recall for diabetic cases, reducing false negatives  
+- Ensemble methods (Random Forest, XGBoost) outperformed traditional ML and Neural Networks on this dataset  
+- LIME enhanced trust and interpretability for potential clinical deployment
+
+---
+
+## Technologies Used
+- Python, Pandas, NumPy, Matplotlib, Seaborn  
+- Scikit-learn, XGBoost, Keras (TensorFlow backend)
+
+---
+
+## Applications
+- Early detection of diabetes in routine health screenings  
+- Automated flagging system for high-risk
